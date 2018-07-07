@@ -10,11 +10,13 @@ source:
   sha256: 9c90d6b178dcda8bafb29274519d7eeb25246f0c0a5ce1c9795491929b34866a
 
 build:
-  number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  noarch: python
+  number: 1
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
+  host:
+    - pip
     - python
     - setuptools
     - matplotlib
